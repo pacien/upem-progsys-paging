@@ -60,9 +60,22 @@ Old style baz segments.
 .B foo
 can only handle new style baz segments. COBOL
 object libraries are not supported in this version.
-.SH BUGS
-The command name should have been chosen more carefully
-to reflect its purpose.
+.SH EXAMPLE
+.nf
+% ./myMemory.py -s 3 -v 8 -a fifo
+> 7	7xx
+> 0	70x
+> 1	701
+> 2	201
+> 0	201
+> 3	231
+> p	231	70xxxxxx
+> 0	230
+> 4	430
+> 2	420
+> p	420	70123xxx
+> x
+.fi
 .SH AUTHORS
 Pacien TRAN-GIRARD
 Adam NAILI
