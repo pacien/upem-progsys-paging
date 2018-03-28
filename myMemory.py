@@ -25,7 +25,7 @@ def main(main_size, virt_size, paginator):
       try:
         pag.load(int(cmd))
         output(cmd, mem.dump_main())
-      except:
+      except IndexError:
         output(cmd, "Error: invalid page.")
     elif cmd == 'p':
       output(cmd, mem.dump_main() + '\t' + mem.dump_virt())

@@ -62,18 +62,20 @@ can only handle new style baz segments. COBOL
 object libraries are not supported in this version.
 .SH EXAMPLE
 .nf
-% ./myMemory.py -s 3 -v 8 -a fifo
+% ./myMemory.py -s 3 -v 5 -a fifo
 > 7	7xx
 > 0	70x
 > 1	701
 > 2	201
+> p	201	7xxxx
 > 0	201
 > 3	231
-> p	231	70xxxxxx
+> p	231	70xxx
 > 0	230
+> p	230	71xxx
 > 4	430
 > 2	420
-> p	420	70123xxx
+> p	420	713xx
 > x
 .fi
 .SH AUTHORS
