@@ -4,10 +4,14 @@
 # Pacien TRAN-GIRARD et Adam NAILI
 
 from mem import Memory
+from pageexception import *
 from fifo import FifoPaginator
-
+from lru import LruPaginator
+from secondchance import SecondChancePaginator
 paginators = {
-  'fifo': FifoPaginator
+  'fifo': FifoPaginator,
+  'lru': LruPaginator,
+  'secondchance': SecondChancePaginator
 }
 
 
@@ -25,7 +29,7 @@ def main(main_size, virt_size, paginator):
       try:
         pag.load(int(cmd))
         output(cmd, mem.dump_main())
-      except IndexError:
+      except PageException:
         output(cmd, "Error: invalid page.")
     elif cmd == 'p':
       output(cmd, mem.dump_main() + '\t' + mem.dump_virt())
