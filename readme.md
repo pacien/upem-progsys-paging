@@ -4,7 +4,7 @@
 ## Usage
 
 * RTFM: `man ./myMemory.1`
-* YOLO: `./myMemory.py -s 3 -v 8 -a fifo`
+* YOLO: `./myMemory.py -s 3 -v 5 -a fifo`
 
 
 ## Authors
