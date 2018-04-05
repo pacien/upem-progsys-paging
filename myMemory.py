@@ -8,10 +8,13 @@ from pageexception import *
 from fifo import FifoPaginator
 from lru import LruPaginator
 from secondchance import SecondChancePaginator
+from randomp import RandomPaginator
+
 paginators = {
   'fifo': FifoPaginator,
   'lru': LruPaginator,
-  'secondchance': SecondChancePaginator
+  'secondchance': SecondChancePaginator,
+  'random': RandomPaginator
 }
 
 
