@@ -1,65 +1,37 @@
-.TH MYMEMORY 1 "MARCH 2018" UPEM "myMemory manual"
+.TH MYMEMORY 1 "APRIL 2018" UPEM "myMemory manual"
 .SH NAME
 myMemory.py \- Memory paging simulator
 .SH SYNOPSIS
-myMemory.py [-h] -s <main mem size> -v <virtual mem size> -a <fifo>
+myMemory.py [-h] -s <main mem size> -v <virtual mem size> -a <algorithm>
 .SH DESCRIPTION
-.B foo
-frobnicates the bar library by tweaking internal
-symbol tables. By default it parses all baz segments
-and rearranges them in reverse order by time for the
-.BR xyzzy (1)
-linker to find them. The symdef entry is theni compressed
-using the WBG (Whiz-Bang-Gizmo) algorithm.
-All files are processed in the order specified.
+.B myMemory
+Simulates a virtual memory manager, allowing the user to load requested pages into a main memory, extended with a virtual memory of a fixed size. The simulator handles several paging strategies, which are detailed below.
 .SH OPTIONS
-.IP -b
-Do not write `busy' to stdout while processing.
-.IP "-c config-file"
-Use the alternate system wide
-.I config-file
-instead of
-.IR /etc/foo.conf .
-This overrides any
-.B FOOCONF
-environment variable.
-.IP -a
-In addition to the baz segments, also parse the
-blurfl headers.
-.IP -r
-Recursive mode. Operates as fast as lightning
-at the expense of a megabyte of virtual memory.
-.SH FILES
-.I /etc/foo.conf
-.RS
-The system wide configuration file. See
-.BR foo (5)
-for further details.
-.RE
-.I ~/.foorc
-.RS
-Per user configuration file. See
-.BR foo (5)
-for further details.
-.SH ENVIRONMENT
-.IP FOOCONF
-If non-null the full pathname for an alternate system wide
-.IR foo.conf .
-Overridden by the
-.B -c
-option.
-.SH DIAGNOSTICS
-The following diagnostics may be issued on stderr:
- 
-Bad magic number.
-.RS
-The input file does not look like an archive file.
-.RE
-Old style baz segments.
-.RS
-.B foo
-can only handle new style baz segments. COBOL
-object libraries are not supported in this version.
+.IP -h
+Displays a short help text.
+.IP "-s <main mem size>"
+Specifies the size of the main memory. Mandatory argument.
+.IP "-v <virtual mem size>"
+Specifies the size of the virtual (secondary) memory. Mandatory argument.
+.IP "-a <algorithm>"
+Uses the specified page management algorithm. Available algorithms are listed below.
+.SH PAGING ALGORITHMS
+.IP fifo
+"First-in, first-out" strategy replacing the oldest loaded page with the requested one. Clock-variant.
+.IP random
+Selects and replaces a page randomly.
+.IP lru
+"Least Recently Used" strategy keeping track of the last request time of each page and replacing the least recently used one.
+.IP secondchance
+"Second chance" strategy similar to FIFO, but avoiding swapping out pages requested twice while they are in the main memory.
+.SH COMMANDS
+The following commands can be used to interact with the simulator: 
+.IP "A number"
+Requests a page to be loaded in the main memory.
+.IP `p`
+Lists the pages in the main and secondary memories.
+.IP `x`
+Exits the program.
 .SH EXAMPLE
 .nf
 % ./myMemory.py -s 3 -v 5 -a fifo
@@ -79,6 +51,6 @@ object libraries are not supported in this version.
 > x
 .fi
 .SH AUTHORS
-Pacien TRAN-GIRARD
+Pacien TRAN-GIRARD,
 Adam NAILI
 
