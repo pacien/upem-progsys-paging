@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-# UPEM / Programmation système / Projet : Simulation de gestion de mémoire virtuelle
-# Pacien TRAN-GIRARD et Adam NAILI
+# UPEM / System programming / Project: Memory paging simulator
+# Pacien TRAN-GIRARD, Adam NAILI
 
 from mem import Memory
 from pageexception import *
@@ -52,4 +52,3 @@ if __name__ == '__main__':
   args = argparser.parse_args()
   assert args.mem_size < args.virtual_size
   main(args.mem_size, args.virtual_size, paginators[args.algorithm])
-

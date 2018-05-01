@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-# UPEM / Programmation système / Projet : Simulation de gestion de mémoire virtuelle
-# Pacien TRAN-GIRARD et Adam NAILI
+# UPEM / System programming / Project: Memory paging simulator
+# Pacien TRAN-GIRARD, Adam NAILI
 
 
 class Memory:

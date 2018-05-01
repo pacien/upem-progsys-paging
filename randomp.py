@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
-# UPEM / Programmation système / Projet : Simulation de gestion de mémoire virtuelle
-# Pacien TRAN-GIRARD et Adam NAILI
 
 from random import randint
 from mem import Memory
 from pageexception import PageException
+
+# UPEM / System programming / Project: Memory paging simulator
+# Pacien TRAN-GIRARD, Adam NAILI
 
 
 class RandomPaginator:
@@ -32,4 +33,3 @@ class RandomPaginator:
     if page in self.mem.virt: self.mem.remove_virt(page)
     overwritten = self._put_main(page)
     if overwritten is not None: self.mem.put_virt(overwritten)
-

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-# UPEM / Programmation système / Projet : Simulation de gestion de mémoire virtuelle
-# Pacien TRAN-GIRARD et Adam NAILI
+# UPEM / System programming / Project: Memory paging simulator
+# Pacien TRAN-GIRARD, Adam NAILI
 
 from mem import Memory
 from pageexception import *
@@ -24,4 +24,3 @@ class FifoPaginator:
     if page in self.mem.virt: self.mem.remove_virt(page)
     overwritten = self._put_main(page)
     if overwritten is not None: self.mem.put_virt(overwritten)
-

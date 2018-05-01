@@ -1,5 +1,4 @@
-# UPEM / Programmation système / Projet : Simulation de gestion de mémoire virtuelle
-
+# UPEM / System programming / Project: Memory paging simulator
 
 ## Usage
 
@@ -16,4 +15,3 @@
 ## License
 
 Project distributed under the terms of the Creative Commons BY-NC-SA 3.0 license.
-
