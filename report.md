@@ -6,7 +6,7 @@ This file document explains the motivation behind implementation choices that ha
 ## Language choice
 
 This program has been implemented in Python.
-This language choice has been approved by Sylvain Cherrier on 2018-03-17.
+This language choice has been approved by Mr Sylvain Cherrier on 2018-03-17.
 
 Python has been chosen for its conciseness, expressiveness, object and inheritance support and its various libraries easing the development of the interactive command line interface and swappable algorithms.
 

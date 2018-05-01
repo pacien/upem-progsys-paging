@@ -54,9 +54,6 @@ class LruPaginator:
 
   def _put_main(self, page):
     self._check_where_to_replace()
-    print("Cursor:")
-    print(self._main_cursor)
-    print("")
     overwritten = self.mem.main[self._main_cursor]
     self.mem.main[self._main_cursor] = page
     self._update_check_table(page)
